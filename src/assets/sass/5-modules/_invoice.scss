@@ -1,3 +1,26 @@
 .invoice-item {
-    
+    display           : grid;
+    grid-template-rows: max-content 1fr;
+    width             : 100%;
+    border            : 1px solid transparent;
+    border-radius     : 8px;
+    padding           : 1rem 1.5rem;
+    background        : $invoiceBg;
+    cursor            : pointer;
+    box-sizing        : border-box;
+
+    h2 {
+        grid-area    : 1 / 1 / 2 / 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .name {
+        grid-area: 1 / 2 / 2 / 3;
+        text-align: right;
+    }
+
+    .status {
+        grid-area  : 2 / 2 / 4 / 3;
+        margin-left: auto;
+    }
 }
