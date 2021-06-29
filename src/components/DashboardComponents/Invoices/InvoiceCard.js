@@ -3,7 +3,7 @@ import React from 'react';
 const InvoiceCard = ({ invoice }) => {
     const statusClasses = `status__container invoice--${invoice.status}`;
     return (
-        <div className="invoice-item">
+        <div className="invoice-item" role="invoice-item">
             <h2>
                 <span>#</span>
                 {invoice.id}
