@@ -5,6 +5,8 @@ const NewInvoiceButton = () => {
         <button className="invoice__btn">
             <span><p>+</p></span>
              New
+            <span>+</span>
+            New
         </button>
     )
 }

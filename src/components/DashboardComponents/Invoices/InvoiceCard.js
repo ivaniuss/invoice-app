@@ -1,7 +1,6 @@
 import React from 'react'
 
-const InvoiceCard = ({ invoice }) => {
-
+const InvoiceCard = ({invoice}) => {
     return (
         <div className="invoice-item">
             <h2>
