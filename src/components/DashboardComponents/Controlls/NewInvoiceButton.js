@@ -3,8 +3,8 @@ import React from 'react';
 const NewInvoiceButton = () => {
     return (
         <button className="invoice__btn">
-            <span>+</span>
-            New
+            <span><p>+</p></span>
+             New
         </button>
     )
 }
