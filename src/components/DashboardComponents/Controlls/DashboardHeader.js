@@ -7,7 +7,6 @@ const DashboardHeader = () => {
     return (
         <div id="dashboard__header">
             <Heading></Heading>
-            <Filter />
             <InvoiceButton />
         </div>
     )
