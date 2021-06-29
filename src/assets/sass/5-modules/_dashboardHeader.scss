@@ -1,5 +1,5 @@
 #dashboard__header {
-    @include flexItem(center, center, row);
+    @include flexItem(space-between, center, row);
     margin-bottom: 4rem;
 
     .heading__container {
