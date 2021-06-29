@@ -12,15 +12,48 @@
     h2 {
         grid-area    : 1 / 1 / 2 / 2;
         margin-bottom: 1.5rem;
+
+        span {
+            color: $hashColor;
+        }
+    }
+
+    .name,
+    .price {
+        color: white;
     }
 
     .name {
-        grid-area: 1 / 2 / 2 / 3;
+        grid-area : 1 / 2 / 2 / 3;
         text-align: right;
+
     }
 
-    .status {
+    // Treat each status as draft initially
+    .status__container {
         grid-area  : 2 / 2 / 4 / 3;
         margin-left: auto;
+        @include flexItem(center, center, row);
+        width: 6.5rem;
+        height: 2.5rem;
+        border-radius: 6px;
+        background-color: rgba(223, 227, 250, 0.06);
+        color: rgb(223, 227, 250);
+        
+        .invoice-status__circle {
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: rgb(223, 227, 250);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .invoice-status {
+
+        }
+    }
+
+    .price {
+        margin-top: 10px;
     }
 }

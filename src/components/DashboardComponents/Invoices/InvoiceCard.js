@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const InvoiceCard = ({invoice}) => {
+const InvoiceCard = ({ invoice }) => {
+    const statusClasses = `status__container invoice--${invoice.status}`;
     return (
         <div className="invoice-item">
             <h2>
@@ -8,9 +9,9 @@ const InvoiceCard = ({invoice}) => {
                 {invoice.id}
             </h2>
             <p className="name">{invoice.clientName}</p>
-            <p className="date">{invoice.createdAt}</p>
-            <p className="price">${invoice.total}</p>
-            <div className="status">
+            <p className="date">Due {invoice.createdAt}</p>
+            <p className="price">&#163;{invoice.total}</p>
+            <div className={statusClasses}>
                 <div className="invoice-status__circle"></div>
                 <div className="invoice-status">{invoice.status}</div>
             </div>
@@ -18,4 +19,4 @@ const InvoiceCard = ({invoice}) => {
     )
 }
 
-export default InvoiceCard
+export default InvoiceCard;
