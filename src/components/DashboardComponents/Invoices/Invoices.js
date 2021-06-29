@@ -1,12 +1,15 @@
 import React from 'react'
 import InvoiceCard from './InvoiceCard';
+import { invoicesData } from '../../../assets/data/data';
 
 const Invoices = () => {
     return (
         <div className="invoice__container">
-            <InvoiceCard></InvoiceCard>
-            <InvoiceCard></InvoiceCard>
-            <InvoiceCard></InvoiceCard>
+            {invoicesData.map(invoice => {
+                return (
+                    <InvoiceCard invoice={invoice} key={invoice.id} />
+                );
+            })}
         </div>
     )
 }
