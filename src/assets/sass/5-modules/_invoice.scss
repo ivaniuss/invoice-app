@@ -49,29 +49,29 @@
     // Different styles for each invoice status
     .invoice {
         &--paid {
-            background-color: rgba(51, 214, 159, 0.06);
-            color           : rgb(51, 214, 159);
+            background-color: $paidBgColor;
+            color           : $paidPrimaryColor;
 
             .invoice-status__circle {
-                background-color: rgb(51, 214, 159);
+                background-color: $paidPrimaryColor;
             }
         }
 
         &--pending {
-            background-color: rgba(255, 143, 0, 0.06);
-            color           : rgb(255, 143, 0);
+            background-color: $pendingBgColor;
+            color           : $pendingPrimaryColor;
 
             .invoice-status__circle {
-                background-color: rgb(255, 143, 0);
+                background-color: $pendingPrimaryColor;
             }
         }
 
         &--draft {
-            background-color: rgba(223, 227, 250, 0.06);
-            color           : rgb(223, 227, 250);
+            background-color: $draftBgColor;
+            color           : $draftPrimaryColor;
 
             .invoice-status__circle {
-                background-color: rgb(223, 227, 250);
+                background-color: $draftPrimaryColor;
             }
         }
     }
