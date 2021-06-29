@@ -1,0 +1,4 @@
+#dashboard__header {
+    @include flexItem(center, center, row);
+    margin-bottom: 4rem;
+}

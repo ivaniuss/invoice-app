@@ -5,7 +5,7 @@ import InvoiceButton from './NewInvoiceButton';
 
 const DashboardHeader = () => {
     return (
-        <div className="dashboard-header">
+        <div id="dashboard__header">
             <Heading></Heading>
             <Filter />
             <InvoiceButton />
