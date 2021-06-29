@@ -1,0 +1,2 @@
+(this["webpackJsonpinvoice-app"]=this["webpackJsonpinvoice-app"]||[]).push([[0],{11:function(e,n,c){"use strict";c.r(n);var t=c(1),i=c.n(t),r=c(3),s=c.n(r),o=(c(8),c(9),c(0));var p=function(){return Object(o.jsx)("div",{className:"App",children:Object(o.jsx)("div",{children:Object(o.jsx)("h1",{children:"Invoice App"})})})};s.a.render(Object(o.jsx)(i.a.StrictMode,{children:Object(o.jsx)(p,{})}),document.getElementById("root"))},8:function(e,n,c){},9:function(e,n,c){}},[[11,1,2]]]);
+//# sourceMappingURL=main.30563257.chunk.js.map
