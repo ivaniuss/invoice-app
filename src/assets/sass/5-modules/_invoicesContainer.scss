@@ -1,3 +1,5 @@
 .invoice__container {
-    
+    @include flexItem(center, center, column);
+    gap: 1rem;
+    width: 100%;
 }
