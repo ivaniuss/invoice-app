@@ -9,7 +9,7 @@ function App() {
     <>
       <main>
         <Switch>
-          <Route path="/" exact>
+          <Route exact path="/invoice-app" exact>
             <Dashboard />
           </Route>
         </Switch>
