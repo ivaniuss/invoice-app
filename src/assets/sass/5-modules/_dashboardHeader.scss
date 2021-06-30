@@ -1,0 +1,10 @@
+#dashboard__header {
+    @include flexItem(space-between, center, row);
+    margin-bottom: 4rem;
+
+    .heading__container {
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

@@ -1,11 +1,20 @@
 import React from 'react';
-import './App.css';
+import '../src/assets/sass/main.scss';
+import Dashboard from './pages/Dashboard';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App">
-       <div><h1> Invoice App </h1></div> 
-    </div>
+    <>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Dashboard />
+          </Route>
+        </Switch>
+      </main>
+    </>
   );
 }
 
