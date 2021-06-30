@@ -2,10 +2,10 @@ import React from 'react'
 import Heading from './DashboardHeading';
 import InvoiceButton from './NewInvoiceButton';
 
-const DashboardHeader = () => {
+const DashboardHeader = (dataLength) => {
     return (
         <div id="dashboard__header">
-            <Heading></Heading>
+            <Heading dataLength={dataLength}></Heading>
             <InvoiceButton />
         </div>
     )
