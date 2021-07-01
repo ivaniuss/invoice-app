@@ -10,10 +10,8 @@ function App() {
     <>
       <main>
         <Switch>
-          <Route path="/invoice-app" exact>
-            <Dashboard />
-          </Route>
-          <Route exact path='/invoice-app/invoice/:id' component={Invoice}/>
+          <Route path="/invoice-app" component={Dashboard} exact />
+          <Route path='/invoice-app/invoice/:id' component={Invoice} exact />
         </Switch>
       </main>
     </>
