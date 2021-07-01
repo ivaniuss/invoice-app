@@ -1,7 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const InvoiceCard = ({ invoice }) => {
     const statusClasses = `status__container invoice--${invoice.status}`;
+    const history = useHistory();
 
     // Format invoice total price
     var formatter = new Intl.NumberFormat('en-GB', {
@@ -9,8 +11,12 @@ const InvoiceCard = ({ invoice }) => {
         currency: 'GBP',
     });
 
+    const handleChange = (invoiceId)=>{
+        history.push(`invoice-app/invoice/${invoiceId}`)
+    }
+
     return (
-        <div className="invoice-item" role="invoice-item">
+        <div className="invoice-item" role="invoice-item" onClick={()=>{handleChange(invoice.id)}}>
             <h2>
                 <span>#</span>
                 {invoice.id}
