@@ -15,17 +15,55 @@ const Invoice = () => {
                 <span>Go back</span>
             </div>
             <div className='invoice-header'>
-                {/* <div> */}
                 <h6>Status</h6>
                 <InvoiceStatus  invoice={({status:'paid'})}/>
-                {/* </div> */}
-                {/* <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </div> */}
             </div>
-            <div>
-                content
+            <div className='invoice-body'>
+                <div className='description'>
+                    <h2 style={{color:'rgb(255, 255, 255)', fontWeight:'bold'}}>#XM9141</h2>
+                    <h6>Graphic Design</h6>
+                </div>                
+                <div className='address'>
+                    <h6>19 Union Terrace</h6>
+                    <h6>London</h6>
+                    <h6>E1 3EZ</h6>
+                    <h6>United Kingdom</h6>
+                </div>                
+                <div className='date'>
+                    <div>
+                        <h6>Invoice Date</h6>
+                        <h2 style={{color:'rgb(255, 255, 255)', fontWeight:'bold'}}>21 Aug 2021</h2>
+                    </div>
+                    <div>
+                        <h6>Payment Due</h6>
+                        <h2 style={{color:'rgb(255, 255, 255)', fontWeight:'bold'}}>20 Sep 2021</h2>
+                    </div>
+                </div>                
+                <div className='client-address'>
+                    <h6>Bill To</h6>
+                    <h2 style={{color:'rgb(255, 255, 255)', fontWeight:'bold'}}>Alex Grim</h2>
+                    <h6>84 Church Way</h6>
+                    <h6>Bradford</h6>
+                    <h6>BD1 9PB</h6>
+                    <h6>United Kingdom</h6>
+                </div>                
+                <div className='email'>
+                    <h6>Sent to</h6>
+                    <h2 style={{color:'rgb(255, 255, 255)', fontWeight:'bold'}}>alexgrim@mail.com</h2>
+                </div>                
+                <div className='table'>
+                    <h2 className='item'>Banner Design</h2>
+                    <h2 className='item'>£156</h2>
+                    <h2 className='item'>Email Design</h2>
+                    <h2 className='item'>£400</h2>
+                    <h2 className='item2'>Amount Due</h2>
+                    <h2 className='item2'>£556</h2>
+                </div>                
+            </div>
+            <div className = 'footer'>
+                <button className= 'invoice__btn'>Edit</button>
+                <button className= 'invoice__btn'>Delete</button>
+                <button className= 'invoice__btn'>Mark As Paid</button>
             </div>
         </div>
     )
