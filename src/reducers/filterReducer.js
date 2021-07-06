@@ -13,7 +13,7 @@ const filterSlice = createSlice({
     reducers: {
         updateFilter(state, action) {
             console.log(action.payload);
-          action.payload = !action.payload
+          state[action.payload] = !state[action.payload]
         },
         toggleDropdown(state, action) {
            state.open = !state.open
