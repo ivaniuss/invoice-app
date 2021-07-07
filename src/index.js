@@ -6,6 +6,7 @@ import store from './store/store';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
+import './service/firebase';
 
 ReactDOM.render(
   <React.StrictMode>
