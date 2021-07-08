@@ -8,7 +8,7 @@
     margin-bottom: 6.5rem;
 
     .invoice-header {
-        display              : grid;
+        // display              : grid;
         grid-template-columns: auto auto;
         justify-content      : space-between;
         align-items          : center;
@@ -20,11 +20,17 @@
         box-sizing           : border-box;
         margin-bottom        : 1.5rem;
 
+
+        .header-status {
+            @include flexItem(space-between, center, row);
+            width: 100%;
+        }
+
         .footer {
-            position: absolute;
-            bottom  : 0;
-            left    : 0;
-            width   : 100%;
+            position  : absolute;
+            bottom    : 0;
+            left      : 0;
+            width     : 100%;
             background: $invoiceBg;
             @include flexItem(flex-end, center, row);
             padding   : 1.5rem;

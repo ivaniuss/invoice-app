@@ -9,7 +9,7 @@ const Invoice = () => {
     const { id } = useParams();
     // Find Invoice in Database
     const currentInvoice = invoicesData.find(invoice => invoice.id === id);
-    
+
     // Transform string to date 
     const dateCreated = new Date(currentInvoice.createdAt);
     const dateDue = new Date(currentInvoice.paymentDue);
@@ -25,7 +25,7 @@ const Invoice = () => {
     return (
         <div className="wrapper invoice-view">
             <GoBack />
-            <InvoiceHeader />
+            <InvoiceHeader invoice={currentInvoice} />
             <div className="invoice-body">
                 <div className="description">
                     <h1 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><span className="hash">#</span>{currentInvoice.id}</h1>
@@ -60,15 +60,22 @@ const Invoice = () => {
                     <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>{currentInvoice.clientEmail}</p>
                 </div>
                 <div className="table">
-                    <p className="item">Banner Design</p>
-                    <p className="item">£156</p>
-                    <p className="item">Email Design</p>
-                    <p className="item">£400</p>
-                    <p className="item2">Amount Due</p>
-                    <p className="item2">£556</p>
+                    {currentInvoice.items.map(item => {
+                        return (
+                            <div className="items">
+                                <p className="item">{item.name}</p>
+                                <p className="item">{item.price}</p>
+                            </div>
+
+                        )
+                    })}
+                    <div className="amount-due">
+                        <p className="item2">Amount Due</p>
+                        <p className="item2">£{currentInvoice.total}</p>
+                    </div>
                 </div>
             </div>
-           
+
         </div>
     )
 }
