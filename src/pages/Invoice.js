@@ -49,15 +49,15 @@ const Invoice = () => {
                 </div>
                 <address className="client-address">
                     <h3>Bill To</h3>
-                    <h4 className="emphasized client-name" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>Alex Grim</h4>
-                    <p>84 Church Way</p>
-                    <p>Bradford</p>
-                    <p>BD1 9PB</p>
-                    <p>United Kingdom</p>
+                    <h4 className="emphasized client-name" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>{currentInvoice.clientName}</h4>
+                    <p>{currentInvoice.clientAddress.street}</p>
+                    <p>{currentInvoice.clientAddress.city}</p>
+                    <p>{currentInvoice.clientAddress.postCode}</p>
+                    <p>{currentInvoice.clientAddress.country}</p>
                 </address>
                 <div className="email">
                     <h3>Sent to</h3>
-                    <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>alexgrim@mail.com</p>
+                    <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>{currentInvoice.clientEmail}</p>
                 </div>
                 <div className="table">
                     <p className="item">Banner Design</p>
