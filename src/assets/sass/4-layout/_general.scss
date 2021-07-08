@@ -1,8 +1,14 @@
 body {
     background-color: $mainBgColor;
-    color: $primaryTextColor;
+    color           : $primaryTextColor;
 }
 
-h1, h2, span {
+h1,
+h2,
+span {
     color: white;
+}
+
+.hash {
+    color: $hashColor;
 }

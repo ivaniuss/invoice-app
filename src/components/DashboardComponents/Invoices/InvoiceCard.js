@@ -18,7 +18,7 @@ const InvoiceCard = ({ invoice }) => {
     return (
         <div className="invoice-item" role="invoice-item" onClick={() => { handleChange(invoice.id) }}>
             <h2>
-                <span>#</span>
+                <span className="hash">#</span>
                 {invoice.id}
             </h2>
             <p className="name">{invoice.clientName}</p>

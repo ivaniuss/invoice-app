@@ -9,6 +9,15 @@ const Invoice = () => {
     const { id } = useParams();
     // Find Invoice in Database
     const currentInvoice = invoicesData.find(invoice => invoice.id === id);
+    console.log(currentInvoice.createdAt);
+    const dateCreated = new Date(currentInvoice.createdAt);
+    const dateDue = new Date(currentInvoice.paymentDue);
+
+    const createdMonth = dateCreated.toLocaleString('default', { month: 'short' });
+    const dueMonth = dateDue.toLocaleString('default', { month: 'short' });
+
+    const dateCreatedFormat = `${dateCreated.getDate()} ${createdMonth} ${dateCreated.getFullYear()}`;
+    const dateDueFormat = `${dateCreated.getDate()} ${dueMonth} ${dateCreated.getFullYear()}`;
 
     return (
         <div className="wrapper invoice-view">
@@ -16,36 +25,36 @@ const Invoice = () => {
             <InvoiceHeader />
             <div className="invoice-body">
                 <div className="description">
-                    <h2 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>#{currentInvoice.id}</h2>
-                    <h2>Graphic Design</h2>
+                    <h1 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><span className="hash">#</span>{currentInvoice.id}</h1>
+                    <p>Graphic Design</p>
                 </div>
-                <div className="sender-address">
+                <address className="sender-address">
                     <p>{currentInvoice.senderAddress.street}</p>
                     <p>{currentInvoice.senderAddress.city}</p>
                     <p>{currentInvoice.senderAddress.postCode}</p>
                     <p>{currentInvoice.senderAddress.country}</p>
-                </div>
+                </address>
                 <div className="dates">
                     <div className="">
-                        <h4>Invoice Date</h4>
-                        <h2 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>21 Aug 2021</h2>
+                        <h3>Invoice Date</h3>
+                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time datetime={currentInvoice.createdAt}>{dateCreatedFormat}</time></h2>
                     </div>
                     <div>
-                        <h4>Payment Due</h4>
-                        <h2 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>20 Sep 2021</h2>
+                        <h3>Payment Due</h3>
+                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time datetime={currentInvoice.paymentDue}>{dateDueFormat}</time></h2>
                     </div>
                 </div>
                 <div className="client-address">
-                    <h4>Bill To</h4>
-                    <h2 style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>Alex Grim</h2>
+                    <h3>Bill To</h3>
+                    <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>Alex Grim</h2>
                     <p>84 Church Way</p>
                     <p>Bradford</p>
                     <p>BD1 9PB</p>
                     <p>United Kingdom</p>
                 </div>
                 <div className="email">
-                    <h4>Sent to</h4>
-                    <p style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>alexgrim@mail.com</p>
+                    <h3>Sent to</h3>
+                    <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>alexgrim@mail.com</p>
                 </div>
                 <div className="table">
                     <p className="item">Banner Design</p>
