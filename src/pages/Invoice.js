@@ -9,13 +9,16 @@ const Invoice = () => {
     const { id } = useParams();
     // Find Invoice in Database
     const currentInvoice = invoicesData.find(invoice => invoice.id === id);
-    console.log(currentInvoice.createdAt);
+    
+    // Transform string to date 
     const dateCreated = new Date(currentInvoice.createdAt);
     const dateDue = new Date(currentInvoice.paymentDue);
 
+    // Get shortened month for each date
     const createdMonth = dateCreated.toLocaleString('default', { month: 'short' });
     const dueMonth = dateDue.toLocaleString('default', { month: 'short' });
 
+    // Format date according to design
     const dateCreatedFormat = `${dateCreated.getDate()} ${createdMonth} ${dateCreated.getFullYear()}`;
     const dateDueFormat = `${dateCreated.getDate()} ${dueMonth} ${dateCreated.getFullYear()}`;
 
@@ -44,14 +47,14 @@ const Invoice = () => {
                         <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time datetime={currentInvoice.paymentDue}>{dateDueFormat}</time></h2>
                     </div>
                 </div>
-                <div className="client-address">
+                <address className="client-address">
                     <h3>Bill To</h3>
-                    <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>Alex Grim</h2>
+                    <h4 className="emphasized client-name" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>Alex Grim</h4>
                     <p>84 Church Way</p>
                     <p>Bradford</p>
                     <p>BD1 9PB</p>
                     <p>United Kingdom</p>
-                </div>
+                </address>
                 <div className="email">
                     <h3>Sent to</h3>
                     <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>alexgrim@mail.com</p>

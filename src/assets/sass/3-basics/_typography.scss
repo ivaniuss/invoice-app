@@ -32,7 +32,7 @@ p {
 // Invouce status
 .status__container {
     text-transform: capitalize;
-    font-weight: 700;
+    font-weight   : 700;
     font-size     : 0.75rem;
     letter-spacing: -0.25px;
 }
@@ -42,4 +42,19 @@ p {
     h1 {
         font-size: 0.75rem;
     }
+
+    h2 {
+        line-height: 1.63;
+    }
+
+    address {
+        p {
+            line-height: 1.63;
+        }
+    }
+}
+
+// Emphasized text
+.emphasized {
+    font-size: 15px;
 }

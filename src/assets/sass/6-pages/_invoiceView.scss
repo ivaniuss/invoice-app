@@ -32,6 +32,10 @@
         padding                       : 1.5rem;
         grid-template-columns         : repeat(2, 1fr);
 
+        .client-name {
+            margin: 8px 0 4px;
+        }
+
         .description {
             grid-area: 1 / 1 / 2 / 3
         }
@@ -40,8 +44,8 @@
 
         .dates {
             grid-area: 3 / 1 / 4 / 2;
-            grid-gap : 1rem;
-            gap      : 1rem;
+            @include flexItem(center, flex-start, column);
+            gap      : 2rem;
         }
 
         .client-address {
