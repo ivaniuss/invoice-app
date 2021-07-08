@@ -2,9 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     open: false,
-    pending: false,
-    paid: false,
-    draft: false
+    inputs: '',
+    pending: true,
+    paid: true,
+    draft: true
 }
 
 const filterSlice = createSlice({
@@ -17,6 +18,9 @@ const filterSlice = createSlice({
         },
         toggleDropdown(state, action) {
            state.open = !state.open
+        },
+        updateInputs(state, action) {
+           state.inputs = action.payload
         }
     }
 });

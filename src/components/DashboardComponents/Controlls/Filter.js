@@ -32,9 +32,7 @@ const Filter = () => {
                     <img src={filterArrow} alt="" className="filter-arrow" />
             </div>
 
-            {open ? (
-                <FilterDropdown changed={changed} />
-            ) : ''}
+            <FilterDropdown changed={changed} />
         </div>
     )
 }
