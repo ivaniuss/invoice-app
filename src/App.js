@@ -22,8 +22,9 @@ function App() {
     <>
       <main>
         <Switch>
-          <Route path="/invoice-app" component={Dashboard} exact />
-          <Route path='/invoice-app/invoice/:id' component={Invoice} exact />
+          <Route path="/invoice-app" exact>
+            <Dashboard />
+          </Route>
         </Switch>
       </main>
     </>
