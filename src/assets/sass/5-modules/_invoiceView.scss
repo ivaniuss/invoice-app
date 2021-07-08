@@ -1,20 +1,12 @@
 .invoice-view {
     position: relative;
-    .go-back{
-        width: 10rem;
-        cursor:pointer;
-        transition: 0.3s;
-        &:hover {
-            color: $hashColor;
-          }
-    }
+
     span{
         text-align: start;
         margin-right: 1.5rem;
     }
     .invoice-header{
         display                 : grid;
-        margin-top              : 2rem;
         grid-template-columns   : auto auto;
         justify-content         : space-between;
         align-items             : center;
@@ -42,35 +34,6 @@
         }
     }
 
-    // Different styles for each invoice status
-    .invoice {
-        &--paid {
-            background-color: $paidBgColor;
-            color           : $paidPrimaryColor;
-
-            .invoice-status__circle {
-                background-color: $paidPrimaryColor;
-            }
-        }
-
-        &--pending {
-            background-color: $pendingBgColor;
-            color           : $pendingPrimaryColor;
-
-            .invoice-status__circle {
-                background-color: $pendingPrimaryColor;
-            }
-        }
-
-        &--draft {
-            background-color: $draftBgColor;
-            color           : $draftPrimaryColor;
-
-            .invoice-status__circle {
-                background-color: $draftPrimaryColor;
-            }
-        }
-    }
     .invoice-body {
         border                  : 1px solid green;
         width                   : 100%;

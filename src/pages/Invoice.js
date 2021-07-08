@@ -11,7 +11,7 @@ const Invoice = () => {
     const currentInvoice = invoicesData.find(invoice => invoice.id === id);
 
     return (
-        <div className="dashboard__container invoice-view">
+        <div className="wrapper invoice-view">
             <GoBack />
             <InvoiceHeader />
             <div className="invoice-body">

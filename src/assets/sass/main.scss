@@ -24,12 +24,12 @@
 @import '5-modules/_dashboardHeader';
 @import '5-modules/_invoicesContainer';
 @import '5-modules/_invoice';
-@import '5-modules/_invoicesContainer';
-@import '5-modules/_invoice';
-@import '5-modules/_invoiceView';
+@import '5-modules/_invoiceStatus';
+@import '5-modules/_goBack';
 
 //  6 - PAGES
 @import '6-pages/_home';
+@import '6-pages/_invoiceView';
 
 //  7 - QUERIES 
 @import '7-queries/_dashboardQueries';

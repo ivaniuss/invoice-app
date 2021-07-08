@@ -17,7 +17,7 @@
             color: $hashColor;
         }
     }
-    
+
     .name,
     .price {
         color: white;
@@ -36,42 +36,12 @@
         width        : 6.5rem;
         height       : 2.5rem;
         border-radius: 6px;
-        
+
         .invoice-status__circle {
             width        : 0.5rem;
             height       : 0.5rem;
             border-radius: 50%;
             margin-right : 0.5rem;
-        }
-    }
-    
-    // Different styles for each invoice status
-    .invoice {
-        &--paid {
-            background-color: $paidBgColor;
-            color           : $paidPrimaryColor;
-            
-            .invoice-status__circle {
-                background-color: $paidPrimaryColor;
-            }
-        }
-
-        &--pending {
-            background-color: $pendingBgColor;
-            color           : $pendingPrimaryColor;
-
-            .invoice-status__circle {
-                background-color: $pendingPrimaryColor;
-            }
-        }
-
-        &--draft {
-            background-color: $draftBgColor;
-            color           : $draftPrimaryColor;
-
-            .invoice-status__circle {
-                background-color: $draftPrimaryColor;
-            }
         }
     }
 

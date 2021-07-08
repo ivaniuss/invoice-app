@@ -4,7 +4,7 @@ import InvoiceStatus from './InvoiceStatus'
 const InvoiceHeader = () => {
     return (
         <div className='invoice-header'>
-            <h6>Status</h6>
+            <h3>Status</h3>
             <InvoiceStatus invoice={({ status: 'paid' })} />
         </div>
     )
