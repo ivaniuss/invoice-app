@@ -31,18 +31,6 @@
 
     .status__container {
         grid-area  : 2 / 2 / 4 / 3;
-        margin-left: auto;
-        @include flexItem(center, center, row);
-        width        : 6.5rem;
-        height       : 2.5rem;
-        border-radius: 6px;
-
-        .invoice-status__circle {
-            width        : 0.5rem;
-            height       : 0.5rem;
-            border-radius: 50%;
-            margin-right : 0.5rem;
-        }
     }
 
     .price {
