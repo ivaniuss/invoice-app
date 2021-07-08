@@ -2,7 +2,7 @@ import React from 'react';
 import '../src/assets/sass/main.scss';
 import Dashboard from './pages/Dashboard';
 import { Switch, Route } from 'react-router-dom';
-import Invoice from './components/DashboardComponents/Invoices/Invoice';
+import Invoice from './pages/Invoice';
 
 function App() {
 
