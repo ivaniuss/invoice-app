@@ -68,11 +68,7 @@ const Invoice = () => {
                     <p className="item2">£556</p>
                 </div>
             </div>
-            <div className="footer">
-                <button className="invoice__btn">Edit</button>
-                <button className="invoice__btn">Delete</button>
-                <button className="invoice__btn">Mark As Paid</button>
-            </div>
+           
         </div>
     )
 }

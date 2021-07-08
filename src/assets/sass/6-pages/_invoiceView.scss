@@ -1,7 +1,11 @@
 .invoice-view {
-    h1, h3 {
+
+    h1,
+    h3 {
         margin-bottom: 4px;
     }
+
+    margin-bottom: 6.5rem;
 
     .invoice-header {
         display              : grid;
@@ -15,22 +19,34 @@
         background           : $invoiceBg;
         box-sizing           : border-box;
         margin-bottom        : 1.5rem;
+
+        .footer {
+            position: absolute;
+            bottom  : 0;
+            left    : 0;
+            width   : 100%;
+            background: $invoiceBg;
+            @include flexItem(flex-end, center, row);
+            padding   : 1.5rem;
+            box-sizing: border-box;
+
+        }
     }
 
     .invoice-body {
-        display                       : grid;
-        grid-template-columns         : 1fr 1fr;
-        row-gap                       : 2rem;
-        width                         : 100%;
-        border-radius                 : 8px;
-        background                    : $invoiceBg;
-        box-shadow                    : rgba(72, 84, 159, 0.10) 0px 10px 10px -10px;
-        box-sizing                    : border-box;
-        display                       : grid;
-        justify-content               : space-between;
-        align-items                   : center;
-        padding                       : 1.5rem;
-        grid-template-columns         : repeat(2, 1fr);
+        display              : grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap              : 2rem;
+        width                : 100%;
+        border-radius        : 8px;
+        background           : $invoiceBg;
+        box-shadow           : rgba(72, 84, 159, 0.10) 0px 10px 10px -10px;
+        box-sizing           : border-box;
+        display              : grid;
+        justify-content      : space-between;
+        align-items          : center;
+        padding              : 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
 
         .client-name {
             margin: 8px 0 4px;
@@ -45,7 +61,7 @@
         .dates {
             grid-area: 3 / 1 / 4 / 2;
             @include flexItem(center, flex-start, column);
-            gap      : 2rem;
+            gap: 2rem;
         }
 
         .client-address {
@@ -76,15 +92,5 @@
         }
     }
 
-    .footer {
-        display              : grid;
-        grid-template-columns: 1fr 2fr 2fr;
-        background           : $invoiceBg;
-        justify-content      : space-between;
-        padding              : 1rem 0;
-        bottom               : 0;
-        margin-top           : 2rem;
-        height               : 3rem;
-        width                : 100%;
-    }
+
 }
