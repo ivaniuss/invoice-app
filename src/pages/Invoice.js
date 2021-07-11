@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom'
 import { invoicesData } from '../assets/data/data';
 import GoBack from '../components/DashboardComponents/Invoices/GoBack';
 import InvoiceHeader from '../components/DashboardComponents/Invoices/InvoiceHeader';
+import usePriceFormatter from '../hooks/usePriceFormatter';
 
 const Invoice = () => {
+
     // Get Invoice ID
     const { id } = useParams();
     // Find Invoice in Database
@@ -21,6 +23,12 @@ const Invoice = () => {
     // Format date according to design
     const dateCreatedFormat = `${dateCreated.getDate()} ${createdMonth} ${dateCreated.getFullYear()}`;
     const dateDueFormat = `${dateCreated.getDate()} ${dueMonth} ${dateCreated.getFullYear()}`;
+
+    // Format invoice total price
+    const formatter = new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'GBP',
+    });
 
     return (
         <div className="wrapper invoice-view">
@@ -59,7 +67,8 @@ const Invoice = () => {
                     <h3>Sent to</h3>
                     <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>{currentInvoice.clientEmail}</p>
                 </div>
-                <table>
+
+                <table className="invoice-service-pricelist">
                     <thead>
                         <tr>
                             <th>QTY</th>
@@ -73,8 +82,8 @@ const Invoice = () => {
                         {currentInvoice.items.map((item, key) => {
                             return (
                                 <tr key={key} className="items">
-                                    <td className="item">{item.name}</td>
-                                    <td className="item">{item.price}</td>
+                                    <td>{item.name}</td>
+                                    <td>{formatter.format(item.price)}</td>
                                 </tr>
 
                             )
@@ -82,8 +91,8 @@ const Invoice = () => {
                     </tbody>
                     <tfoot className="amount-due">
                         <tr>
-                            <td className="item2">Amount Due</td>
-                            <td className="item2">£{currentInvoice.total}</td>
+                            <td>Amount Due</td>
+                            <td className="amount-due-price">{formatter.format(currentInvoice.total)}</td>
                         </tr>
                     </tfoot>
                 </table>

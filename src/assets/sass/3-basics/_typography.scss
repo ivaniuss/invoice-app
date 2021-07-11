@@ -58,3 +58,15 @@ p {
 .emphasized {
     font-size: 15px;
 }
+
+// Table with service prices at invoice view
+.invoice-service-pricelist {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+    font-size: 0.75rem;
+
+    .amount-due-price {
+        font-size: 1.25rem;
+    }
+}

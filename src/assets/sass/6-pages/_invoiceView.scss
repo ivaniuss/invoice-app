@@ -79,7 +79,8 @@
         }
 
         // Table with services and amount die
-        table {
+        .invoice-service-pricelist {
+            color: white;
             grid-area    : 6 / 1 / 7 / -1;
             display      : grid;
             border-radius: 8px;
@@ -89,19 +90,19 @@
             }
 
             tbody {
-                grid-area       : 1 / 1 / 1 / -1;
-                background-color: rgb(37, 41, 69);
-                border-top-left-radius: inherit;
+                grid-area              : 1 / 1 / 1 / -1;
+                background-color       : rgb(37, 41, 69);
+                border-top-left-radius : inherit;
                 border-top-right-radius: inherit;
             }
-            
+
             tfoot {
-                grid-area       : 3 / 1 / 2 / -1;
-                background-color: #0c0e16;
-                border-bottom-left-radius: inherit;
+                grid-area                 : 3 / 1 / 2 / -1;
+                background-color          : #0c0e16;
+                border-bottom-left-radius : inherit;
                 border-bottom-right-radius: inherit;
             }
-            
+
             tfoot,
             tbody {
                 width     : 100%;
@@ -109,13 +110,19 @@
                 box-sizing: border-box;
 
                 tr {
-                    width: inherit;
+                    @include flexItem(space-between, center, row);
 
                     td {
-                        width: inherit;
+                        width: 50%;
+
+                        &:nth-child(2n) {
+                            text-align: right;
+                        }
                     }
                 }
             }
+
+
         }
     }
 }
