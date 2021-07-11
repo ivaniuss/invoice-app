@@ -35,7 +35,7 @@
             @include flexItem(flex-end, center, row);
             padding   : 1.5rem;
             box-sizing: border-box;
-
+            gap       : 0.5rem;
         }
     }
 
@@ -80,7 +80,7 @@
 
         // Table with services and amount die
         .invoice-service-pricelist {
-            color: white;
+            color        : white;
             grid-area    : 6 / 1 / 7 / -1;
             display      : grid;
             border-radius: 8px;

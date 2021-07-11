@@ -1,25 +1,49 @@
 .invoice__btn {
     background-color: $primaryPurple;
     color           : white;
-    min-width: 5.875rem;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
-    margin-left: 1rem;
-    border: none;
-    border-radius: 10rem;
+    border          : none;
+    border-radius   : 10rem;
     @include flexItem(center, center, row);
-    font-weight: 800;
+    font-weight           : 800;
+    width                 : initial;
+    border                : none;
+    border-radius         : 10rem;
+    padding               : 1rem 1.5rem;
+    font-size             : 0.75rem;
+    font-weight           : 700;
+    line-height           : 1.25;
+    -webkit-font-smoothing: antialiased;
+    cursor                : pointer;
+    outline               : none;
+
+    // Tackle different button types
+    &--mark-as-paid {
+        @extend .invoice__btn;
+        background: rgb(124, 93, 250);
+    }
+
+    &--delete {
+        @extend .invoice__btn;
+        background: rgb(236, 87, 87);
+    }
+
+    &--edit {
+        @extend .invoice__btn;
+        color     : #dfe3fa;
+        background: rgb(37, 41, 69);
+    }
 
     span {
         color           : $primaryPurple;
         border-radius   : 50%;
         background-color: white;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 0.5rem;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        font-size: 18px;
+        display         : inline-flex;
+        justify-content : center;
+        align-items     : center;
+        margin-right    : 0.5rem;
+        width           : 30px;
+        height          : 30px;
+        text-align      : center;
+        font-size       : 18px;
     }
 }

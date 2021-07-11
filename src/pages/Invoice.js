@@ -97,28 +97,8 @@ const Invoice = () => {
                     </tfoot>
                 </table>
             </div>
-
         </div>
     )
 }
 
-export default Invoice
-
-
-// <div className="invoice-preview__container">
-//     <div className="go-back">
-//         Your code. This is a separate component
-//     </div>
-//     <div className="invoice-preview__header">
-//         <div className="left">
-//             <p>Status</p>
-//             <p>Status component goes here</p>
-//         </div>
-//         <div className="right">
-//            Your buttons
-//         </div>
-//         <div>
-//             The invoice data
-//         </div>
-//     </div>
-// </div>
+export default Invoice;

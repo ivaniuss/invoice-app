@@ -1,5 +1,6 @@
 import React from 'react'
 import InvoiceStatus from './InvoiceStatus'
+import Button from '../../shared/button';
 
 const InvoiceHeader = ({ invoice }) => {
     return (
@@ -9,9 +10,11 @@ const InvoiceHeader = ({ invoice }) => {
                 <InvoiceStatus invoice={invoice} />
             </div>
             <div className="footer">
-                <button className="invoice__btn">Edit</button>
-                <button className="invoice__btn">Delete</button>
-                {/* <button className="invoice__btn">Mark As Paid</button> */}
+                <Button type="edit">Edit</Button>
+                <Button type="delete">Delete</Button>
+                {invoice.status !== 'paid' ? (
+                    <Button type="mark-as-paid">Mark As Paid</Button>
+                ) : ''}
             </div>
         </div>
     )
