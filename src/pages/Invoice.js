@@ -59,21 +59,34 @@ const Invoice = () => {
                     <h3>Sent to</h3>
                     <p className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}>{currentInvoice.clientEmail}</p>
                 </div>
-                <div className="table">
-                    {currentInvoice.items.map(item => {
-                        return (
-                            <div className="items">
-                                <p className="item">{item.name}</p>
-                                <p className="item">{item.price}</p>
-                            </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>QTY</th>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                        )
-                    })}
-                    <div className="amount-due">
-                        <p className="item2">Amount Due</p>
-                        <p className="item2">£{currentInvoice.total}</p>
-                    </div>
-                </div>
+                        {currentInvoice.items.map(item => {
+                            return (
+                                <tr className="items">
+                                    <td className="item">{item.name}</td>
+                                    <td className="item">{item.price}</td>
+                                </tr>
+
+                            )
+                        })}
+                    </tbody>
+                    <tfoot className="amount-due">
+                        <tr>
+                            <td className="item2">Amount Due</td>
+                            <td className="item2">£{currentInvoice.total}</td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
 
         </div>

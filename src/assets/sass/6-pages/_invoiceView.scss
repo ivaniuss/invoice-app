@@ -78,25 +78,44 @@
             grid-area: 4 / 1 / 5 / 2;
         }
 
-        .table {
-            grid-area            : 6 / 1 / 7 / -1;
-            display              : grid;
-            width                : 100%;
-            grid-template-columns: 1fr 1fr;
-            justify-content      : space-evenly;
-            border-radius        : 8px;
+        // Table with services and amount die
+        table {
+            grid-area    : 6 / 1 / 7 / -1;
+            display      : grid;
+            border-radius: 8px;
 
-            .item {
-                padding         : 1rem;
-                background-color: rgb(37, 41, 69);
+            thead {
+                display: none;
             }
 
-            .item2 {
-                padding         : 2rem 1rem;
+            tbody {
+                grid-area       : 1 / 1 / 1 / -1;
+                background-color: rgb(37, 41, 69);
+                border-top-left-radius: inherit;
+                border-top-right-radius: inherit;
+            }
+            
+            tfoot {
+                grid-area       : 3 / 1 / 2 / -1;
                 background-color: #0c0e16;
+                border-bottom-left-radius: inherit;
+                border-bottom-right-radius: inherit;
+            }
+            
+            tfoot,
+            tbody {
+                width     : 100%;
+                padding   : 2rem;
+                box-sizing: border-box;
+
+                tr {
+                    width: inherit;
+
+                    td {
+                        width: inherit;
+                    }
+                }
             }
         }
     }
-
-
 }
