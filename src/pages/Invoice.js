@@ -40,11 +40,11 @@ const Invoice = () => {
                 <div className="dates">
                     <div className="">
                         <h3>Invoice Date</h3>
-                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time datetime={currentInvoice.createdAt}>{dateCreatedFormat}</time></h2>
+                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time dateTime={currentInvoice.createdAt}>{dateCreatedFormat}</time></h2>
                     </div>
                     <div>
                         <h3>Payment Due</h3>
-                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time datetime={currentInvoice.paymentDue}>{dateDueFormat}</time></h2>
+                        <h2 className="emphasized" style={{ color: "rgb(255, 255, 255)", fontWeight: "bold" }}><time dateTime={currentInvoice.paymentDue}>{dateDueFormat}</time></h2>
                     </div>
                 </div>
                 <address className="client-address">
@@ -70,9 +70,9 @@ const Invoice = () => {
                     </thead>
                     <tbody>
 
-                        {currentInvoice.items.map(item => {
+                        {currentInvoice.items.map((item, key) => {
                             return (
-                                <tr className="items">
+                                <tr key={key} className="items">
                                     <td className="item">{item.name}</td>
                                     <td className="item">{item.price}</td>
                                 </tr>
