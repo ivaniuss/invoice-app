@@ -29,7 +29,7 @@ const Filter = () => {
         <div className={classes}>
             <div className="filter__controller" onClick={toggleFilterHandler}>
                 Filter
-                    <img src={filterArrow} alt="" className="filter-arrow" />
+                <img src={filterArrow} alt="" className="filter-arrow" />
             </div>
 
             <FilterDropdown changed={changed} />
