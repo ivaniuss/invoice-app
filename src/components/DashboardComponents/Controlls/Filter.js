@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
+import FilterDropdown from './FilterDropdown';
+import filterArrow from '../../../assets/images/icon-arrow-down.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { filterActions } from '../../../reducers/filterReducer';
 
 const Filter = () => {
-    return (
-        <div className="invoice-filter">
-            Filter
-            <span className="filter-arrow">&#8249;</span>
+    // const [state, dispatch] = useReducer(reducer, initialState);
+    const dispatch = useDispatch();
+    const filter = useSelector(state => state.filter)
+    const open = useSelector(state => state.filter.open)
 
-            <div className="dropdown-filter-options">
-                <label>
-                    <input type="checkbox" value="paid"/>
-                    Paid
-                </label>
-                <label>
-                    <input type="checkbox" value="pending"/>
-                    Pending
-                </label>
-                <label>
-                    <input type="checkbox" value="draft" />
-                    Draft
-                </label>
+    const classes = `invoice-filter ${open ? 'open' : ''}`;
+    useEffect(() => {
+    }, [open])
+
+    const toggleFilterHandler = () => {
+        dispatch(filterActions.toggleDropdown());
+    }
+
+    const changed = (e) => {
+        // console.log('changed', e.target.checked);
+        // console.log(e.target.value);
+        dispatch(filterActions.updateFilter(e.target.value));
+        console.log(filter);
+    }
+
+    return (
+        <div className={classes}>
+            <div className="filter__controller" onClick={toggleFilterHandler}>
+                Filter
+                    <img src={filterArrow} alt="" className="filter-arrow" />
             </div>
+
+            <FilterDropdown changed={changed} />
         </div>
     )
 }

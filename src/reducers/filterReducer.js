@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    selected: false,
-    options: []
+    open: false,
+    inputs: '',
+    pending: true,
+    paid: true,
+    draft: true
 }
 
 const filterSlice = createSlice({
@@ -10,7 +13,14 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         updateFilter(state, action) {
-            console.log(action);
+            console.log(action.payload);
+          state[action.payload] = !state[action.payload]
+        },
+        toggleDropdown(state, action) {
+           state.open = !state.open
+        },
+        updateInputs(state, action) {
+           state.inputs = action.payload
         }
     }
 });
