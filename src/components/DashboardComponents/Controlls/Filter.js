@@ -7,8 +7,8 @@ import { filterActions } from '../../../reducers/filterReducer';
 const Filter = () => {
     // const [state, dispatch] = useReducer(reducer, initialState);
     const dispatch = useDispatch();
-    const filter = useSelector(state => state.filter)
-    const open = useSelector(state => state.filter.open)
+    const filter = useSelector(state => state.filter);
+    const open = useSelector(state => state.filter.open);
 
     const classes = `invoice-filter ${open ? 'open' : ''}`;
     useEffect(() => {
@@ -19,10 +19,7 @@ const Filter = () => {
     }
 
     const changed = (e) => {
-        // console.log('changed', e.target.checked);
-        // console.log(e.target.value);
         dispatch(filterActions.updateFilter(e.target.value));
-        console.log(filter);
     }
 
     return (

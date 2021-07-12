@@ -9,6 +9,7 @@
     }
     
     .dropdown-filter-options {
+        pointer-events: none;
         opacity: 0;
         position        : absolute;
         bottom          : -150px;
@@ -95,5 +96,6 @@
 .invoice-filter.open {
     .dropdown-filter-options {
         opacity: 1;
+        pointer-events: visible;
     }
 }

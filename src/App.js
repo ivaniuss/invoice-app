@@ -11,7 +11,6 @@ function App() {
       const res = await getInvoices();
       if (res) {
         res.forEach(invoice => {
-          console.log('invoice', invoice.data());
         })
       }
     }
