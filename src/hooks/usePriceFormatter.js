@@ -1,5 +1,3 @@
-import React from 'react';
-
 const usePriceFormatter = (amount) => {
 
     // Format invoice total price

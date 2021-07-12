@@ -8,7 +8,6 @@
     margin-bottom: 6.5rem;
 
     .invoice-header {
-        // display              : grid;
         grid-template-columns: auto auto;
         justify-content      : space-between;
         align-items          : center;
@@ -81,32 +80,57 @@
         // Table with services and amount die
         .invoice-service-pricelist {
             color        : white;
-            grid-area    : 6 / 1 / 7 / -1;
-            display      : grid;
+            grid-area    : 6 / 1 / 10 / -1;
             border-radius: 8px;
+            width        : 100%;
+            overflow     : hidden;
+            @include flexItem (flex-start, flex-start, column);
 
             thead {
-                display: none;
+                display  : none;
+                grid-area: 1 / 1 / 1 / -1;
+                padding  : 2rem 2rem 0;
+
+                th {
+                    min-width : 100px;
+                    text-align: left;
+
+                    &:last-of-type {
+                        text-align: right;
+                    }
+                }
+            }
+
+            thead,
+            tbody {
+                background-color: rgb(37, 41, 69);
             }
 
             tbody {
-                grid-area              : 1 / 1 / 1 / -1;
-                background-color       : rgb(37, 41, 69);
-                border-top-left-radius : inherit;
-                border-top-right-radius: inherit;
+                grid-area       : 2 / 1 / 1 / -1;
+                background-color: rgb(37, 41, 69);
+
+                .items {
+                    &:not(:last-of-type) {
+                        margin: 20px 0;
+                    }
+                }
             }
 
+
             tfoot {
-                grid-area                 : 3 / 1 / 2 / -1;
-                background-color          : #0c0e16;
-                border-bottom-left-radius : inherit;
-                border-bottom-right-radius: inherit;
+                grid-area       : 3 / 1 / 2 / -1;
+                background-color: #0c0e16;
+            }
+
+            .quantity {
+                text-align: center;
             }
 
             tfoot,
-            tbody {
+            tbody,
+            thead {
                 width     : 100%;
-                padding   : 2rem;
                 box-sizing: border-box;
 
                 tr {
@@ -115,14 +139,29 @@
                     td {
                         width: 50%;
 
-                        &:nth-child(2n) {
+                        &:last-child {
                             text-align: right;
                         }
                     }
                 }
             }
 
+            tfoot,
+            tbody {
+                padding: 2rem;
 
+                tr {
+                    @include flexItem(space-between, center, row);
+
+                    td {
+                        width: 50%;
+
+                        &:last-child {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
         }
     }
 }

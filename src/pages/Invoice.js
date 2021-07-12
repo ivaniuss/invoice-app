@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { invoicesData } from '../assets/data/data';
 import GoBack from '../components/DashboardComponents/Invoices/GoBack';
 import InvoiceHeader from '../components/DashboardComponents/Invoices/InvoiceHeader';
-import usePriceFormatter from '../hooks/usePriceFormatter';
 
 const Invoice = () => {
 
@@ -71,8 +70,8 @@ const Invoice = () => {
                 <table className="invoice-service-pricelist">
                     <thead>
                         <tr>
-                            <th>QTY</th>
                             <th>Item Name</th>
+                            <th className="quantity">QTY</th>
                             <th>Price</th>
                             <th>Total</th>
                         </tr>
@@ -83,7 +82,9 @@ const Invoice = () => {
                             return (
                                 <tr key={key} className="items">
                                     <td>{item.name}</td>
-                                    <td>{formatter.format(item.price)}</td>
+                                    <td className="hidden quantity">{item.quantity}</td>
+                                    <td className="hidden">{formatter.format(item.price)}</td>
+                                    <td>{formatter.format(item.price * item.quantity)}</td>
                                 </tr>
 
                             )
