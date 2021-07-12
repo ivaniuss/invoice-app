@@ -9,7 +9,6 @@ const Invoices = () => {
     const filter = useSelector(state => state.filter);
     const open = useSelector(state => state.filter.open);
     const inputs = useSelector(state => state.filter.inputs)
-    console.log(inputs);
     
     useEffect(() => {
         dispatch(filterActions.updateInputs(document.querySelectorAll('.input-filter')));
@@ -22,7 +21,6 @@ const Invoices = () => {
         if (filter.pending && filter.draft && filter.paid || !filter.pending && !filter.draft && !filter.paid) {
             {
                 return invoicesData.map(invoice => {
-                    console.log('all');
                     return <InvoiceCard invoice={invoice} key={invoice.id} />
 
                 })
@@ -32,7 +30,6 @@ const Invoices = () => {
                 if (input.checked) {
                     return invoicesData.map(invoice => {
                         if (invoice.status === input.value) {
-                            console.log('some');
                             return <InvoiceCard invoice={invoice} key={invoice.id} />
                         }
 
@@ -44,7 +41,6 @@ const Invoices = () => {
 
     return (
         <div className="invoice__container" role="invoices">
-            {console.log(previewInvoice())}
             {previewInvoice()}
         </div>
     )

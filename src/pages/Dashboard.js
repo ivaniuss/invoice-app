@@ -13,7 +13,7 @@ const Dashboard = ({ dataLength }) => {
     }, []);
 
     return (
-        <div className="dashboard__container">
+        <div className="wrapper">
             <DashboardHeader dataLength={invoicesData.length} />
             <Invoices />
         </div>

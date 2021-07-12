@@ -1,0 +1,49 @@
+@media only screen and (min-width: 550px) {
+    .invoice-view {
+        .invoice-body {
+            .invoice-service-pricelist {
+                thead {
+                    display: table-header-group;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .invoice-view {
+        .invoice-header {
+            @include flexItem(space-between, center, row);
+
+            .header-status {
+                justify-content: flex-start;
+                width          : 230px;
+            }
+
+            .footer {
+                position: static;
+                padding : 0;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 770px) {
+    .invoice-view {
+        .invoice-body {
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap              : 1.25rem;
+
+            address {
+                &:first-of-type {
+                    text-align: end;
+                }
+            }
+
+            .email {
+                grid-area: 3 / 3 / 4 / 4;
+            }
+        }
+    }
+}

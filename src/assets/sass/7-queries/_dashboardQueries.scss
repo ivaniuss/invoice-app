@@ -1,5 +1,5 @@
 @media only screen and (min-width: 768px) {
-    .dashboard__container {
+    .wrapper {
 
         .invoice__container {
             .invoice-item {
@@ -18,7 +18,7 @@
 
                 .name {
                     grid-area   : 1 / 3 / 2 / 4;
-                    margin-right: 2.5rem;
+                    margin-right: 1rem;
                     text-align  : initial;
                 }
 

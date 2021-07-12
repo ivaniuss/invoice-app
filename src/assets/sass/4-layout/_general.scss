@@ -1,8 +1,15 @@
 body {
     background-color: $mainBgColor;
-    color: $primaryTextColor;
+    color           : $primaryTextColor;
+    position: relative;
 }
 
-h1, h2 {
+h1,
+h2,
+span {
     color: white;
+}
+
+.hash {
+    color: $hashColor;
 }

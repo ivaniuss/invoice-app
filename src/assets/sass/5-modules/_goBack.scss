@@ -1,0 +1,15 @@
+.go-back {
+    width     : 10rem;
+    cursor    : pointer;
+    transition: 0.3s;
+    margin-bottom: 2rem;
+
+    &:hover {
+        color: $hashColor;
+    }
+
+    .arrow-left {
+        transform: rotate(90deg);
+        margin-right: 1.5rem;
+    }
+}

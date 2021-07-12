@@ -1,8 +1,12 @@
 body {
-    font-family   : 'Spartan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size     : 12px;
     line-height   : 1.125;
     letter-spacing: -0.63px;
+}
+
+body,
+button {
+    font-family: 'Spartan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -27,14 +31,48 @@ p {
         font-weight: 700;
         line-height: 1.1;
     }
+}
 
-    .status__container {
-        text-transform: capitalize;
-        font-weight   : 700;
-        font-size     : 0.75rem;
-        letter-spacing: -0.25px;
+// Invouce status
+.status__container {
+    text-transform: capitalize;
+    font-weight   : 700;
+    font-size     : 0.75rem;
+    letter-spacing: -0.25px;
+}
+
+// Invoice view
+.invoice-body {
+    h1 {
+        font-size: 0.75rem;
     }
 
+    h2 {
+        line-height: 1.63;
+    }
+
+    address {
+        p {
+            line-height: 1.63;
+        }
+    }
+}
+
+// Emphasized text
+.emphasized {
+    font-size: 15px;
+}
+
+// Table with service prices at invoice view
+.invoice-service-pricelist {
+    font-weight   : 700;
+    line-height   : 1.2;
+    letter-spacing: 0.2px;
+    font-size     : 0.75rem;
+
+    .amount-due-price {
+        font-size: 1.25rem;
+    }
 }
 
 // Filter 
