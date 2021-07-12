@@ -19,10 +19,7 @@ const Filter = () => {
     }
 
     const changed = (e) => {
-        // console.log('changed', e.target.checked);
-        // console.log(e.target.value);
         dispatch(filterActions.updateFilter(e.target.value));
-        console.log(filter);
     }
 
     return (
