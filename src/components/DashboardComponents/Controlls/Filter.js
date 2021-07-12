@@ -12,7 +12,7 @@ const Filter = () => {
 
     const classes = `invoice-filter ${open ? 'open' : ''}`;
     useEffect(() => {
-    }, [open])
+    }, [open]);
 
     const toggleFilterHandler = () => {
         dispatch(filterActions.toggleDropdown());
